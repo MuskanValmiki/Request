@@ -66,7 +66,6 @@ def main():
     else:
         print(listOfCourseIds[userSelectedCourse-1])
         responseOfCourseExercies=requests.get("https://saral.navgurukul.org/api/courses/"+str(listOfCourseIds[userSelectedCourse-1])+"/exercises")
-        print(responseOfCourseExercies,"naykkkkkkk",)
         responseOfExerciseCoursesInText=responseOfCourseExercies.text
         createJsonFile(fileNameOfExercise,responseOfExerciseCoursesInText)
         data=readJsonFile(fileNameOfExercise)
